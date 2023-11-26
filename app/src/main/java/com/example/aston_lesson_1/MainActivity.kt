@@ -1,5 +1,6 @@
 package com.example.aston_lesson_1
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.os.Build
@@ -15,9 +16,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.aston_lesson_1.databinding.ActivityMainBinding
 import java.io.File
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MusicAdapter.OnMusicClickListener {
     private lateinit var binding: ActivityMainBinding
-    private val listOfSongs = mutableListOf<Music>()
+    private val listOfSongs = arrayListOf<Music>()
+    private val musicAdapter = MusicAdapter(this)
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             binding.musicPlaceHolder.visibility = View.VISIBLE
         } else {
             initRecycler()
+            musicAdapter.setListOfMusic(listOfSongs)
         }
     }
 
@@ -68,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         binding.run {
             musicRecycler.apply {
                 layoutManager = LinearLayoutManager(this@MainActivity)
-//                adapter = MusicAdapter()
+                adapter = musicAdapter
             }
         }
     }
@@ -108,6 +111,19 @@ class MainActivity : AppCompatActivity() {
 
         @RequiresApi(Build.VERSION_CODES.TIRAMISU)
         private const val STORAGE_PERMISSION_API = android.Manifest.permission.READ_MEDIA_AUDIO
+    }
+
+    override fun onMusicClick(position: Int) {
+        Toast.makeText(this, "$position", Toast.LENGTH_SHORT).show()
+        MyMediaPlayer.getInstance()?.reset()
+        MyMediaPlayer.currentIndex = position
+        val intent = Intent(this, MediaPlayerActivity::class.java)
+        val bundle = Bundle().apply {
+            putParcelableArrayList("LIST",listOfSongs)
+        }
+        intent.putExtra("bundle", bundle)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        this.startActivity(intent)
     }
 
 }
