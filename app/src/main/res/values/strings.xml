@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Aston_Lesson_1</string>
+    <string name="title_songs">Songs</string>
+    <string name="nothing_found">No songs found</string>
 </resources>

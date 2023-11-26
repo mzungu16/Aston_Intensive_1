@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="songs_size">20sp</dimen>
+    <dimen name="songs_padding">10dp</dimen>
+    <dimen name="recycler_padding">10dp</dimen>
+    <dimen name="recycler_height">0dp</dimen>
+    <dimen name="weight_music_logo">36dp</dimen>
+    <dimen name="height_music_logo">36dp</dimen>
+    <dimen name="margin_music_title">10dp</dimen>
+</resources>
