@@ -1,6 +1,7 @@
-package com.example.aston_lesson_1
+package com.example.aston_lesson_1.utils
 
 import androidx.recyclerview.widget.DiffUtil
+import com.example.aston_lesson_1.data.Music
 
 class DiffUtilMain(private val oldList: List<Music>, private val newList: List<Music>) :
     DiffUtil.Callback() {

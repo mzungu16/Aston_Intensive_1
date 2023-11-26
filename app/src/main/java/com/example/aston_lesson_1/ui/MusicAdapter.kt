@@ -1,11 +1,13 @@
-package com.example.aston_lesson_1
+package com.example.aston_lesson_1.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.aston_lesson_1.data.Music
 import com.example.aston_lesson_1.databinding.MusicItemRecyclerBinding
+import com.example.aston_lesson_1.utils.DiffUtilMain
 
 class MusicAdapter(private val onAdapterMusicListener: OnMusicClickListener) :
     RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {

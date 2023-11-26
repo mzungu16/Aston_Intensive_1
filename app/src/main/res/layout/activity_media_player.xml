@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#F50057"
     android:orientation="vertical"
-    tools:context=".MediaPlayerActivity">
+    tools:context=".ui.MediaPlayerActivity">
 
     <TextView
         android:id="@+id/song_title"

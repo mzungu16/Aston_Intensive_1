@@ -1,4 +1,4 @@
-package com.example.aston_lesson_1
+package com.example.aston_lesson_1.ui
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.aston_lesson_1.data.Music
+import com.example.aston_lesson_1.data.MyMediaPlayer
 import com.example.aston_lesson_1.databinding.ActivityMainBinding
 import java.io.File
 
